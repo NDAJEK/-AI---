@@ -23,25 +23,38 @@ am(ws1,"bot",false);us(1)
 </body>
 </html>
 <script>
-// Assess questions builder + scoring
+// Assess questions builder - 8 questions, 2 per dimension
 (function(){
 var ct = document.getElementById('aq');
 if(!ct)return;
 var qs=[
-  {dim:'🔍 生涯关注', q:'你是否主动了解过大学的专业课程和就业方向？',os:['完全不了解','了解一点','大概了解','比较清楚','非常清楚'], scores:[1,2,3,4,5]},
-  {dim:'🎯 生涯控制', q:'你相信自己能通过努力影响未来的发展方向吗？',os:['完全不信','不太信','一般','比较相信','完全相信'], scores:[1,2,3,4,5]},
-  {dim:'🧗 生涯好奇', q:'你愿意尝试新的学习领域、社团活动和社交圈吗？',os:['完全不想','不太想','一般','比较想','非常想'], scores:[1,2,3,4,5]},
-  {dim:'💪 生涯自信', q:'面对新环境的不确定性，你相信自己能应对吗？',os:['完全没信心','不太有','一般','比较有','非常有'], scores:[1,2,3,4,5]}
+  // 🔍 生涯关注 (2题)
+  {dim:'🔍 生涯关注',q:'你是否主动了解过大学专业的课程内容和就业方向？', os:['完全没了解','了解一点','大概了解','比较清楚','非常清楚'], scores:[1,2,3,4,5]},
+  {dim:'🔍 生涯关注',q:'你是否已经思考过大学期间想实现的目标或成长方向？', os:['完全没想过','偶尔想过','有一些想法','比较明确','非常明确'], scores:[1,2,3,4,5]},
+  // 🎯 生涯控制 (2题)
+  {dim:'🎯 生涯控制',q:'你相信自己能通过自己的努力影响未来的发展方向吗？', os:['完全不信','不太信','一般','比较相信','完全相信'], scores:[1,2,3,4,5]},
+  {dim:'🎯 生涯控制',q:'当原计划被打乱时，你能快速调整并找到新的方向吗？', os:['完全不能','比较难','一般','基本能','完全能'], scores:[1,2,3,4,5]},
+  // 🧗 生涯好奇 (2题)
+  {dim:'🧗 生涯好奇',q:'你愿意主动尝试新的学习领域、社团活动和社交圈子吗？', os:['完全不想','不太想','一般','比较想','非常想'], scores:[1,2,3,4,5]},
+  {dim:'🧗 生涯好奇',q:'对于不了解的事物，你愿意保持开放心态去探索了解吗？', os:['完全不愿意','不太愿意','一般','比较愿意','非常愿意'], scores:[1,2,3,4,5]},
+  // 💪 生涯自信 (2题)
+  {dim:'💪 生涯自信',q:'面对大学新环境中的不确定性，你相信自己能应对吗？', os:['完全没信心','不太有信心','一般','比较有信心','非常有信心'], scores:[1,2,3,4,5]},
+  {dim:'💪 生涯自信',q:'遇到困难或挫折时，你相信自己能找到解决办法吗？', os:['完全不相信','不太相信','一般','比较相信','完全相信'], scores:[1,2,3,4,5]}
 ];
 window.assessAnswers = {};
+window.dimMap = {'🔍 生涯关注':[],'🎯 生涯控制':[],'🧗 生涯好奇':[],'💪 生涯自信':[]};
 qs.forEach(function(q,i){
+  // track which dim this question belongs to
+  window.dimMap[q.dim].push(i);
   var d=document.createElement('div');
-  d.style.cssText='background:#FDF0E3;border-radius:10px;padding:14px;border-left:3px solid #F8D1A8;margin-bottom:12px';
-  var h='<div style="font-weight:700;color:#C06A20;font-size:13px;margin-bottom:2px">'+q.dim+'</div><div style="font-weight:600;margin-bottom:8px;font-size:14px">'+(i+1)+'. '+q.q+'</div><div style="display:flex;gap:6px;flex-wrap:wrap">';
+  d.style.cssText='background:#FDF0E3;border-radius:10px;padding:14px;border-left:3px solid #F8D1A8;margin-bottom:10px';
+  var h='<div style="font-weight:700;color:#C06A20;font-size:12px;margin-bottom:2px">'+q.dim+'</div>';
+  h+='<div style="font-weight:600;margin-bottom:8px;font-size:14px">'+(i+1)+'. '+q.q+'</div><div style="display:flex;gap:5px;flex-wrap:wrap">';
   q.os.forEach(function(o,j){
-    h+='<button data-i="'+i+'" data-v="'+j+'" style="padding:5px 14px;border:1.5px solid #FBE3CA;border-radius:20px;background:#fffcf9;cursor:pointer;font-size:12px;font-family:inherit;transition:all 0.2s">'+o+'</button>';
+    h+='<button data-i="'+i+'" data-v="'+j+'" style="padding:5px 12px;border:1.5px solid #FBE3CA;border-radius:20px;background:#fffcf9;cursor:pointer;font-size:12px;font-family:inherit;transition:all 0.2s">'+o+'</button>';
   });
-  h+='</div>';d.innerHTML=h;ct.appendChild(d);
+  h+='</div>'+'<div style="font-size:10px;color:#bbb;margin-top:4px;text-align:right" id="qs_'+i+'">未选择</div>';
+  d.innerHTML=h;ct.appendChild(d);
 });
 ct.addEventListener('click',function(e){
   var b=e.target.closest('button');if(!b)return;
@@ -51,44 +64,106 @@ ct.addEventListener('click',function(e){
   });
   b.style.background='#D4782A';b.style.borderColor='#D4782A';b.style.color='#fff';
   window.assessAnswers[i] = parseInt(b.dataset.v);
-});
+  var st = document.getElementById('qs_'+i);
+  if(st) st.textContent = '✅ 已选择';
+  // Update progress
+  var done = Object.keys(window.assessAnswers).length;
+  var total = 8;
+  var prog = document.getElementById('assessProgress');
+  if(prog) prog.textContent = '进度：'+done+'/'+total;
 })();
 
-// Submit assessment
+// Add progress bar
+(function(){
+  var prog = document.createElement('div');
+  prog.id = 'assessProgress';
+  prog.style.cssText = 'text-align:center;font-size:13px;color:#8B7355;padding:4px 0';
+  prog.textContent = '进度：0/8';
+  var ct = document.getElementById('aq');
+  if(ct) ct.parentNode.insertBefore(prog, ct.nextSibling);
+})();
+})();
+
+// Submit + Score
 window.submitAssess = function(){
   var answers = window.assessAnswers || {};
-  var keys = Object.keys(answers);
-  if(keys.length < 4){
-    alert('请完成所有 4 道题后再提交');
-    return;
-  }
+  var answered = Object.keys(answers).length;
+  if(answered < 8){ alert('请完成全部 8 道题后再提交（已完成 '+answered+'/8）'); return; }
+
   var dims = ['🔍 生涯关注','🎯 生涯控制','🧗 生涯好奇','💪 生涯自信'];
-  var scores = [answers[0], answers[1], answers[2], answers[3]];
-  var total = scores.reduce(function(a,b){return a+b;}, 0);
-  var avg = (total / 4).toFixed(1);
-  
-  var tips = [];
-  scores.forEach(function(s,i){
-    if(s <= 2) tips.push(dims[i]+'：得分较低，建议多关注这方面，可以试试工具箱中的练习。');
-    else if(s <= 3) tips.push(dims[i]+'：处于中等水平，有提升空间。');
-    else tips.push(dims[i]+'：表现不错，继续保持！');
+  var dimIcons = ['🔍','🎯','🧗','💪'];
+  var dimScores = {};
+  var dimItems = {};
+  dims.forEach(function(d){ dimScores[d]=[]; dimItems[d]=[]; });
+
+  Object.keys(answers).forEach(function(k){
+    var idx = parseInt(k);
+    var val = answers[k] + 1; // 0-4 -> 1-5
+    var found = false;
+    dims.forEach(function(d){
+      if(window.dimMap[d] && window.dimMap[d].indexOf(idx) >= 0){
+        dimScores[d].push(val);
+        dimItems[d].push(val);
+        found = true;
+      }
+    });
   });
-  
+
+  var totalScore = 0, totalCount = 0;
+  dims.forEach(function(d){
+    dimScores[d] = dimScores[d].length > 0 ? (dimScores[d].reduce(function(a,b){return a+b;},0) / dimScores[d].length) : 0;
+    totalScore += dimScores[d] * (dimItems[d] ? dimItems[d].length : 0);
+    totalCount += dimItems[d] ? dimItems[d].length : 0;
+  });
+  var avg = totalCount > 0 ? (totalScore / totalCount).toFixed(1) : '0.0';
+
+  // Tips per dimension
+  var dimAdvice = {};
+  dims.forEach(function(d){
+    var s = dimScores[d];
+    if(s >= 4) dimAdvice[d] = '🌟 表现良好，继续保持！';
+    else if(s >= 3) dimAdvice[d] = '🌱 处于中等水平，还有提升空间。';
+    else dimAdvice[d] = '💪 建议关注这个维度，可以试试工具箱中的练习来加强。';
+  });
+
+  // Overall
   var level = '';
   if(avg >= 4) level = '🌟 整体适应力较强，你已做好进入大学的充分准备！';
   else if(avg >= 3) level = '🌱 整体适应力中等，针对低分维度稍加练习会更从容。';
   else level = '💪 整体适应力有待加强，建议利用工具箱中的练习逐步提升。';
-  
-  var html = '<div style="font-weight:700;font-size:16px;color:#5E8240;margin-bottom:10px">📊 测评结果</div>';
-  html += '<div style="font-size:14px;margin-bottom:12px">'+level+'</div>';
-  html += '<div style="font-size:13px;line-height:1.7;color:#2C1810">'+tips.join('<br>')+'</div>';
-  html += '<div style="font-size:12px;color:#8B7355;margin-top:10px;border-top:1px dashed rgba(94,130,64,0.2);padding-top:8px">综合得分：'+avg+' / 5.0</div>';
-  
+
+  // Build result HTML with simple bar chart
+  var html = '<div style="font-weight:700;font-size:16px;color:#5E8240;margin-bottom:12px">📊 测评结果</div>';
+  html += '<div style="font-size:14px;margin-bottom:14px;padding:10px 14px;background:#F2F7ED;border-radius:8px">'+level+'</div>';
+
+  dims.forEach(function(d,i){
+    var s = dimScores[d];
+    var pct = ((s-1)/4*100).toFixed(0);
+    html += '<div style="margin-bottom:12px">';
+    html += '<div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:3px">';
+    html += '<span style="font-weight:600">'+d+'</span><span>'+s.toFixed(1)+' / 5.0</span></div>';
+    html += '<div style="height:8px;background:#FBE3CA;border-radius:4px;overflow:hidden">';
+    html += '<div style="height:100%;width:'+pct+'%;background:#D4782A;border-radius:4px;transition:width 0.5s"></div></div>';
+    html += '<div style="font-size:11px;color:#8B7355;margin-top:2px">'+dimAdvice[d]+'</div></div>';
+  });
+
+  html += '<div style="font-size:12px;color:#8B7355;border-top:1px dashed rgba(94,130,64,0.2);padding-top:10px;margin-top:4px">综合得分：'+avg+' / 5.0</div>';
+
+  // Find lowest dimension and suggest tool
+  var minDim = dims[0], minScore = dimScores[dims[0]];
+  dims.forEach(function(d){ if(dimScores[d] < minScore){ minScore=dimScores[d]; minDim=d; } });
+  var toolSuggest = {'🔍 生涯关注':'试试工具箱中的情绪记录日记，记录你对未来的思考','🎯 生涯控制':'试试认知重构练习，训练主动决策的思维模式','🧗 生涯好奇':'试试五分钟正念，保持开放和专注的心态','💪 生涯自信':'试试478呼吸法，先从平复焦虑开始建立信心'};
+  html += '<div style="margin-top:12px;padding:10px 14px;background:#FDF6ED;border-left:3px solid #C8913C;border-radius:8px;font-size:12px;color:#2C1810">';
+  html += '<span style="font-weight:600">💡 建议：</span>你在「'+minDim+'」维度相对较弱，'+toolSuggest[minDim]+'。</div>';
+
   var r = document.getElementById('assessResult');
   r.style.display = 'block';
   r.innerHTML = html;
-  r.scrollIntoView({behavior:'smooth'});
+  r.scrollIntoView({behavior:'smooth',block:'start'});
+  document.getElementById('assessSubmit').textContent = '重新测评';
+  document.getElementById('assessSubmit').onclick = function(){ location.reload(); };
 };
+
 
 // Archive cards
 (function(){
