@@ -1,4 +1,6 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>青途AI</title><style>*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}:root{--c1:#FEF8F2;--c2:#FDF0E3;--c3:#FBE3CA;--c4:#F8D1A8;--w3:#E8A85E;--w4:#D4782A;--w5:#C06A20;--w6:#A85A18;--b2:#C4B09A;--b3:#8B7355;--b6:#3D2B1A;--b8:#2C1810;--g4:#7A9E5A;--g5:#5E8240;--a4:#C8913C;--r:14px;--rs:10px;--f:"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}html,body{height:100%;font-family:var(--f);background:var(--c1);color:var(--b8);line-height:1.65}.app{display:flex;height:100%;max-width:860px;margin:0 auto;background:#fffcf9;box-shadow:0 8px 32px rgba(60,40,20,0.1);overflow:hidden}.sdbr{width:85px;background:var(--b6);display:flex;flex-direction:column;flex-shrink:0;z-index:10;padding:18px 0 10px}.sdbr .ml{width:36px;height:36px;border-radius:10px;background:var(--w4);display:flex;align-items:center;justify-content:center;margin:0 auto 14px}.sdbr .ml svg{width:22px;height:22px}.sbtn{width:100%;padding:12px 0;border:none;background:transparent;color:rgba(255,235,215,0.4);cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;transition:all 0.25s;position:relative;border-left:3px solid transparent}.sbtn:hover{background:rgba(255,235,215,0.06);color:rgba(255,235,215,0.8)}.sbtn .ic{font-size:20px;line-height:1}.sbtn .lb{font-size:10px;opacity:0.55}.sbtn.at{background:rgba(255,235,215,0.12);color:#fff;border-left-color:var(--w4)}.sbtn.at .lb{opacity:1}.sbtn.at::before{content:"";position:absolute;left:-3px;top:50%;transform:translateY(-50%);width:3px;height:36px;background:var(--w4);border-radius:0 3px 3px 0}.main{flex:1;display:flex;flex-direction:column;min-width:0}.hdr{background:linear-gradient(135deg,#D4782A,#A85A18);color:#fff;padding:16px 24px 12px;display:flex;align-items:center;gap:14px;flex-shrink:0}.hdr .lw{width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0}.hdr .lw svg{width:28px;height:28px}.hdr .ht{flex:1}.hdr h1{font-size:18px;font-weight:700}.hdr .sub{font-size:11.5px;opacity:0.82}.hdr .pt{font-size:13px;opacity:0.75;background:rgba(255,255,255,0.12);padding:3px 12px;border-radius:20px}.ct{flex:1;overflow-y:auto;display:flex;flex-direction:column}.hd,.tp.hd{display:none}.sb{display:flex;gap:3px;padding:10px 20px 8px;background:var(--c1);border-bottom:1px solid var(--c2);flex-shrink:0;overflow-x:auto}.sd{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11px;color:var(--b2);position:relative}.sd .ci{width:26px;height:26px;border-radius:50%;background:var(--c2);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:var(--b2);transition:all 0.35s}.sd.at .ci{background:var(--w4);color:#fff;box-shadow:0 2px 10px rgba(212,120,42,0.35);transform:scale(1.08)}.sd.at{color:var(--w5);font-weight:600}.sd.dn .ci{background:var(--g4);color:#fff;font-size:13px}.sd.dn{color:var(--g5)}.sd .lb{font-size:10px;overflow:hidden;text-overflow:ellipsis;max-width:58px;text-align:center}.ch{flex:1;overflow-y:auto;padding:14px 22px 8px;display:flex;flex-direction:column;gap:12px;background:#fffcf9}.msg{display:flex;gap:10px;max-width:88%;animation:fu 0.35s ease}.msg.bt{align-self:flex-start}.msg.us{align-self:flex-end;flex-direction:row-reverse}@keyframes fu{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}.msg .av{width:28px;height:28px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:13px;margin-top:4px}.msg.bt .av{background:var(--c2)}.msg.us .av{background:var(--c3)}.msg .bub{padding:10px 16px;border-radius:var(--rs);font-size:14px;line-height:1.7;word-break:break-word}.msg.bt .bub{background:var(--c1);border:1px solid var(--c2);border-top-left-radius:3px;color:var(--b8)}.msg.us .bub{background:var(--w4);color:#fff;border-top-right-radius:3px}.ia{padding:6px 22px 12px;border-top:1px solid var(--c2);background:#fffcf9;flex-shrink:0;display:flex;gap:10px;align-items:flex-end}.ia textarea{flex:1;border:1.5px solid var(--c3);border-radius:var(--rs);padding:8px 14px;font-size:14px;font-family:var(--f);resize:none;outline:none;min-height:40px;max-height:110px;background:var(--c1);color:var(--b8)}.ia textarea:focus{border-color:var(--c4);background:#fffcf9}.ia .snd{width:40px;height:40px;border-radius:50%;border:none;background:var(--w4);color:#fff;font-size:18px;cursor:pointer;transition:all 0.2s;flex-shrink:0}.ia .snd:hover{background:var(--w5);transform:scale(1.04)}.bc{background:#FDF6ED;border:1.5px solid var(--a4);border-radius:var(--rs);padding:12px 16px;margin:4px 0;font-size:14px}.bc .tag{display:inline-block;background:var(--a4);color:#fff;font-size:12px;font-weight:600;padding:2px 10px;border-radius:4px}.ac{background:#F2F7ED;border:1.5px solid var(--g4);border-radius:var(--rs);padding:12px 16px;margin:6px 0}.ac .tt{font-weight:700;color:var(--g5);font-size:14px;margin-bottom:6px}.ac .it{padding:4px 0;font-size:13px;color:var(--b8);display:flex;align-items:flex-start;gap:6px;border-bottom:1px dashed rgba(94,130,64,0.12)}.ac .it:last-child{border-bottom:none}.tp{flex:1;overflow-y:auto;padding:24px 28px 20px;display:flex;flex-direction:column;gap:20px}.tp h2{font-size:20px;color:var(--b8);font-weight:700}.tp .desc{font-size:14px;color:var(--b3);line-height:1.7}.tp .tl{font-size:11px;color:var(--b2);text-align:right;border-top:1px solid var(--c2);padding-top:10px}.cg{display:flex;flex-direction:column;gap:12px}.cg .cd{background:var(--c1);border-radius:var(--rs);padding:16px 18px;border-left:3px solid var(--c4)}.cg .cd .ctt{font-weight:700;color:var(--w5);font-size:14px;margin-bottom:4px;display:flex;align-items:center;gap:8px}.cg .cd .cdd{font-size:13px;color:var(--b3)}.cg .cd .csc{font-size:12px;color:var(--w3);margin-top:4px}.ai{background:var(--c1);border-radius:var(--rs);padding:16px 18px;border-left:3px solid var(--c4)}.ai .q{font-weight:600;color:var(--b8);font-size:14px;margin-bottom:8px}.ai .opts{display:flex;gap:6px;flex-wrap:wrap}.ai .opts button{padding:5px 14px;border:1.5px solid var(--c3);border-radius:20px;background:#fffcf9;color:var(--b3);font-size:12px;cursor:pointer;font-family:var(--f)}.ai .opts button:hover{border-color:var(--w4);color:var(--w5)}.ai .opts button.sel{background:var(--w4);border-color:var(--w4);color:#fff}.bb{background:var(--c1);border-radius:var(--r);padding:24px;text-align:center;border:1.5px solid var(--c2)}.bb .bcir{width:100px;height:100px;border-radius:50%;margin:10px auto;background:var(--w4);opacity:0.15;transition:all 0.3s}.bb .bcir.ih{opacity:0.35;transform:scale(1.15)}.bb .bcir.hd{opacity:0.55;transform:scale(1)}.bb .bcir.ex{opacity:0.2;transform:scale(0.8)}.bb .bp{font-size:22px;font-weight:700;color:var(--w5);margin:10px 0 4px}.bb .bst{padding:8px 24px;border:none;border-radius:20px;background:var(--w4);color:#fff;font-size:14px;cursor:pointer;font-family:var(--f)}.bb .bst:hover{background:var(--w5)}.bb .bst:disabled{opacity:0.4;cursor:not-allowed}.jb textarea{width:100%;border:1.5px solid var(--c3);border-radius:var(--rs);padding:14px;font-size:14px;font-family:var(--f);resize:vertical;min-height:100px;background:var(--c1);color:var(--b8);outline:none}.jb textarea:focus{border-color:var(--c4);background:#fffcf9}.jb .jsv{margin-top:8px;padding:7px 20px;border:none;border-radius:20px;background:var(--w4);color:#fff;font-size:13px;cursor:pointer;font-family:var(--f)}.jb .jsv:hover{background:var(--w5)}.jb .jsd{font-size:12px;color:var(--g5);margin-top:6px;display:none}.br{display:flex;gap:14px;justify-content:center;margin:12px 0;flex-wrap:wrap}.br .bd{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;flex-direction:column;gap:2px}.br .bd.lk{background:var(--c1);border:2px dashed var(--c3);filter:grayscale(0.6)}.br .bd .bl{font-size:8px;color:var(--b2)}.bot{flex-shrink:0;padding:0 22px}.disc{padding:6px 14px;background:var(--c2);border-radius:var(--rs);font-size:11.5px;color:var(--b3);line-height:1.5;margin-bottom:2px}.disc strong{color:var(--w5)}.cred{text-align:center;font-size:10px;color:var(--b2);padding:2px 0 3px}@media(max-width:640px){.sdbr{width:68px;padding:14px 0}.sdbr .ml{width:30px;height:30px}.sdbr .ml svg{width:18px;height:18px}.sbtn{padding:10px 0}.sbtn .ic{font-size:17px}.sbtn .lb{font-size:9px}.app{max-width:100%}.hdr{padding:12px 14px}.hdr .lw{width:38px;height:38px}.hdr .lw svg{width:22px;height:22px}.tp{padding:16px 14px}.ch{padding:12px 14px 6px}.ia{padding:4px 14px 10px}.msg{max-width:95%}.sb{padding:6px 10px}.sd .ci{width:22px;height:22px;font-size:10px}.sd .lb{max-width:32px;font-size:8px}.bb .bcir{width:72px;height:72px}.cg .cd{padding:12px 14px}}</style></head><body><div class="app"><div class="sdbr"><div class="ml"><svg viewBox="0 0 64 64" fill="none"><path d="M10 50 L22 26 L34 50" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M26 50 L38 20 L50 50" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="46" cy="22" r="9" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="2.2"/><circle cx="46" cy="23" r="4.5" fill="rgba(255,255,255,0.5)"/><path d="M16 50 Q24 44 30 38 Q36 32 34 26" stroke="white" stroke-width="2.2" stroke-linecap="round" fill="none" opacity="0.5"/><path d="M4 54 Q32 46 60 54" stroke="white" stroke-width="1.8" stroke-linecap="round" opacity="0.3"/></svg></div><button class="sbtn at" data-t="chat" onclick="swT('chat')"><span class="ic">💬</span><span class="lb">咨询对话</span></button><button class="sbtn" data-t="assess" onclick="swT('assess')"><span class="ic">📊</span><span class="lb">适应力测评</span></button><button class="sbtn" data-t="toolbox" onclick="swT('toolbox')"><span class="ic">🧰</span><span class="lb">心理工具箱</span></button><button class="sbtn" data-t="archive" onclick="swT('archive')"><span class="ic">📁</span><span class="lb">成长档案</span></button></div><div class="main"><div class="hdr"><div class="lw"><svg viewBox="0 0 64 64" fill="none"><path d="M10 50 L22 26 L34 50" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M26 50 L38 20 L50 50" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="46" cy="22" r="9" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="2.2"/><circle cx="46" cy="23" r="4.5" fill="rgba(255,255,255,0.5)"/><path d="M16 50 Q24 44 30 38 Q36 32 34 26" stroke="white" stroke-width="2.2" stroke-linecap="round" fill="none" opacity="0.5"/><path d="M4 54 Q32 46 60 54" stroke="white" stroke-width="1.8" stroke-linecap="round" opacity="0.3"/></svg></div><div class="ht"><h1>青途 AI</h1><div class="sub">衔接期认知重构助手 · CBT</div></div><span class="pt" id="pt">💬 咨询对话</span></div><div class="ct" id="tchat"><div class="sb" id="sb"><div class="sd at" data-s="1"><div class="ci">1</div><span class="lb">事件梳理</span></div><div class="sd" data-s="2"><div class="conn"></div><div class="ci">2</div><span class="lb">情绪标注</span></div><div class="sd" data-s="3"><div class="conn"></div><div class="ci">3</div><span class="lb">信念识别</span></div><div class="sd" data-s="4"><div class="conn"></div><div class="ci">4</div><span class="lb">反思引导</span></div><div class="sd" data-s="5"><div class="conn"></div><div class="ci">5</div><span class="lb">重构方案</span></div></div><div class="ch" id="ch"></div><div class="bot"><div class="disc"><strong>📋 心理科普自助工具</strong> · 不提供医疗诊断 · 不能替代专业心理咨询<br>如出现自伤、自杀等严重情绪危机，请立即拨打 <strong>12355</strong> 青少年服务热线</div><div class="cred">本工具干预流程基于CBT人工设计，AI仅作为交互执行载体</div></div><div class="ia"><textarea id="inp" rows="1" placeholder="请客观描述最近让你情绪波动的一件事…"></textarea><button class="snd" id="snd">➤</button></div></div><div class="tp hd" id="tassess"><div><h2>📊 适应力测评</h2><p class="desc">根据生涯适应力理论（Career Adaptability），从四个核心维度评估你进入大学前的准备程度。每题选择最符合你的选项。</p></div><div class="cg" id="aq"></div><div id="assessResult" style="display:none;background:#F2F7ED;border:1.5px solid #7A9E5A;border-radius:10px;padding:16px;margin-top:4px"></div><button id="assessSubmit" onclick="submitAssess()" style="padding:10px 28px;border:none;border-radius:20px;background:#D4782A;color:#fff;font-size:14px;cursor:pointer;font-family:inherit;align-self:center;margin-top:4px">提交测评</button><div class="tl">设计依据：Savickas 生涯适应力理论</div></div><div class="tp hd" id="ttoolbox"><div><h2>🧰 心理工具箱</h2><p class="desc">即时平复 · 日常觉察 · 思维矫正。</p></div><div class="cg" id="tc"></div><div class="tl">设计依据：CBT 自助技术 · 正念减压（MBSR）</div></div><div class="tp hd" id="tarchive"><div><h2>📁 成长档案</h2><p class="desc">每一次对话都是成长的记录。完成 5 步流程后自动保存。</p></div><div class="cg" id="ac"></div><div class="br"><div class="bd lk">🔒<span class="bl">—</span></div><div class="bd lk">🔒<span class="bl">—</span></div><div class="bd lk">🔒<span class="bl">—</span></div><div class="bd lk">🔒<span class="bl">—</span></div><div class="bd lk">🔒<span class="bl">—</span></div></div><div class="tl">设计依据：正强化 · 成长型思维</div></div></div></div><script>
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>青途AI</title><style>*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}:root{--c1:#FEF8F2;--c2:#FDF0E3;--c3:#FBE3CA;--c4:#F8D1A8;--w3:#E8A85E;--w4:#D4782A;--w5:#C06A20;--w6:#A85A18;--b2:#C4B09A;--b3:#8B7355;--b6:#3D2B1A;--b8:#2C1810;--g4:#7A9E5A;--g5:#5E8240;--a4:#C8913C;--r:14px;--rs:10px;--f:"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}html,body{height:100%;font-family:var(--f);background:var(--c1);color:var(--b8);line-height:1.65}.app{display:flex;height:100%;max-width:860px;margin:0 auto;background:#fffcf9;box-shadow:0 8px 32px rgba(60,40,20,0.1);overflow:hidden}.sdbr{width:85px;background:var(--b6);display:flex;flex-direction:column;flex-shrink:0;z-index:10;padding:18px 0 10px}.sdbr .ml{width:36px;height:36px;border-radius:10px;background:var(--w4);display:flex;align-items:center;justify-content:center;margin:0 auto 14px}.sdbr .ml svg{width:22px;height:22px}.sbtn{width:100%;padding:12px 0;border:none;background:transparent;color:rgba(255,235,215,0.4);cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;transition:all 0.25s;position:relative;border-left:3px solid transparent}.sbtn:hover{background:rgba(255,235,215,0.06);color:rgba(255,235,215,0.8)}.sbtn .ic{font-size:20px;line-height:1}.sbtn .lb{font-size:10px;opacity:0.55}.sbtn.at{background:rgba(255,235,215,0.12);color:#fff;border-left-color:var(--w4)}.sbtn.at .lb{opacity:1}.sbtn.at::before{content:"";position:absolute;left:-3px;top:50%;transform:translateY(-50%);width:3px;height:36px;background:var(--w4);border-radius:0 3px 3px 0}.main{flex:1;display:flex;flex-direction:column;min-width:0}.hdr{background:linear-gradient(135deg,#D4782A,#A85A18);color:#fff;padding:16px 24px 12px;display:flex;align-items:center;gap:14px;flex-shrink:0}.hdr .lw{width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0}.hdr .lw svg{width:28px;height:28px}.hdr .ht{flex:1}.hdr h1{font-size:18px;font-weight:700}.hdr .sub{font-size:11.5px;opacity:0.82}.hdr .pt{font-size:13px;opacity:0.75;background:rgba(255,255,255,0.12);padding:3px 12px;border-radius:20px}.ct{flex:1;overflow-y:auto;display:flex;flex-direction:column}.hd,.tp.hd{display:none}.sb{display:flex;gap:3px;padding:10px 20px 8px;background:var(--c1);border-bottom:1px solid var(--c2);flex-shrink:0;overflow-x:auto}.sd{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11px;color:var(--b2);position:relative}.sd .ci{width:26px;height:26px;border-radius:50%;background:var(--c2);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:var(--b2);transition:all 0.35s}.sd.at .ci{background:var(--w4);color:#fff;box-shadow:0 2px 10px rgba(212,120,42,0.35);transform:scale(1.08)}.sd.at{color:var(--w5);font-weight:600}.sd.dn .ci{background:var(--g4);color:#fff;font-size:13px}.sd.dn{color:var(--g5)}.sd .lb{font-size:10px;overflow:hidden;text-overflow:ellipsis;max-width:58px;text-align:center}.ch{flex:1;overflow-y:auto;padding:14px 22px 8px;display:flex;flex-direction:column;gap:12px;background:#fffcf9}.msg{display:flex;gap:10px;max-width:88%;animation:fu 0.35s ease}.msg.bt{align-self:flex-start}.msg.us{align-self:flex-end;flex-direction:row-reverse}@keyframes fu{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}.msg .av{width:28px;height:28px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:13px;margin-top:4px}.msg.bt .av{background:var(--c2)}.msg.us .av{background:var(--c3)}.msg .bub{padding:10px 16px;border-radius:var(--rs);font-size:14px;line-height:1.7;word-break:break-word}.msg.bt .bub{background:var(--c1);border:1px solid var(--c2);border-top-left-radius:3px;color:var(--b8)}.msg.us .bub{background:var(--w4);color:#fff;border-top-right-radius:3px}.ia{padding:6px 22px 12px;border-top:1px solid var(--c2);background:#fffcf9;flex-shrink:0;display:flex;gap:10px;align-items:flex-end}.ia textarea{flex:1;border:1.5px solid var(--c3);border-radius:var(--rs);padding:8px 14px;font-size:14px;font-family:var(--f);resize:none;outline:none;min-height:40px;max-height:110px;background:var(--c1);color:var(--b8)}.ia textarea:focus{border-color:var(--c4);background:#fffcf9}.ia .snd{width:40px;height:40px;border-radius:50%;border:none;background:var(--w4);color:#fff;font-size:18px;cursor:pointer;transition:all 0.2s;flex-shrink:0}.ia .snd:hover{background:var(--w5);transform:scale(1.04)}.bc{background:#FDF6ED;border:1.5px solid var(--a4);border-radius:var(--rs);padding:12px 16px;margin:4px 0;font-size:14px}.bc .tag{display:inline-block;background:var(--a4);color:#fff;font-size:12px;font-weight:600;padding:2px 10px;border-radius:4px}.ac{background:#F2F7ED;border:1.5px solid var(--g4);border-radius:var(--rs);padding:12px 16px;margin:6px 0}.ac .tt{font-weight:700;color:var(--g5);font-size:14px;margin-bottom:6px}.ac .it{padding:4px 0;font-size:13px;color:var(--b8);display:flex;align-items:flex-start;gap:6px;border-bottom:1px dashed rgba(94,130,64,0.12)}.ac .it:last-child{border-bottom:none}.tp{flex:1;overflow-y:auto;padding:24px 28px 20px;display:flex;flex-direction:column;gap:20px}.tp h2{font-size:20px;color:var(--b8);font-weight:700}.tp .desc{font-size:14px;color:var(--b3);line-height:1.7}.tp .tl{font-size:11px;color:var(--b2);text-align:right;border-top:1px solid var(--c2);padding-top:10px}.cg{display:flex;flex-direction:column;gap:12px}.cg .cd{background:var(--c1);border-radius:var(--rs);padding:16px 18px;border-left:3px solid var(--c4)}.cg .cd .ctt{font-weight:700;color:var(--w5);font-size:14px;margin-bottom:4px;display:flex;align-items:center;gap:8px}.cg .cd .cdd{font-size:13px;color:var(--b3)}.cg .cd .csc{font-size:12px;color:var(--w3);margin-top:4px}.ai{background:var(--c1);border-radius:var(--rs);padding:16px 18px;border-left:3px solid var(--c4)}.ai .q{font-weight:600;color:var(--b8);font-size:14px;margin-bottom:8px}.ai .opts{display:flex;gap:6px;flex-wrap:wrap}.ai .opts button{padding:5px 14px;border:1.5px solid var(--c3);border-radius:20px;background:#fffcf9;color:var(--b3);font-size:12px;cursor:pointer;font-family:var(--f)}.ai .opts button:hover{border-color:var(--w4);color:var(--w5)}.ai .opts button.sel{background:var(--w4);border-color:var(--w4);color:#fff}.bb{background:var(--c1);border-radius:var(--r);padding:24px;text-align:center;border:1.5px solid var(--c2)}.bb .bcir{width:100px;height:100px;border-radius:50%;margin:10px auto;background:var(--w4);opacity:0.15;transition:all 0.3s}.bb .bcir.ih{opacity:0.35;transform:scale(1.15)}.bb .bcir.hd{opacity:0.55;transform:scale(1)}.bb .bcir.ex{opacity:0.2;transform:scale(0.8)}.bb .bp{font-size:22px;font-weight:700;color:var(--w5);margin:10px 0 4px}.bb .bst{padding:8px 24px;border:none;border-radius:20px;background:var(--w4);color:#fff;font-size:14px;cursor:pointer;font-family:var(--f)}.bb .bst:hover{background:var(--w5)}.bb .bst:disabled{opacity:0.4;cursor:not-allowed}.jb textarea{width:100%;border:1.5px solid var(--c3);border-radius:var(--rs);padding:14px;font-size:14px;font-family:var(--f);resize:vertical;min-height:100px;background:var(--c1);color:var(--b8);outline:none}.jb textarea:focus{border-color:var(--c4);background:#fffcf9}.jb .jsv{margin-top:8px;padding:7px 20px;border:none;border-radius:20px;background:var(--w4);color:#fff;font-size:13px;cursor:pointer;font-family:var(--f)}.jb .jsv:hover{background:var(--w5)}.jb .jsd{font-size:12px;color:var(--g5);margin-top:6px;display:none}.br{display:flex;gap:14px;justify-content:center;margin:12px 0;flex-wrap:wrap}.br .bd{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;flex-direction:column;gap:2px}.br .bd.lk{background:var(--c1);border:2px dashed var(--c3);filter:grayscale(0.6)}.br .bd .bl{font-size:8px;color:var(--b2)}.bot{flex-shrink:0;padding:0 22px}.disc{padding:6px 14px;background:var(--c2);border-radius:var(--rs);font-size:11.5px;color:var(--b3);line-height:1.5;margin-bottom:2px}.disc strong{color:var(--w5)}.cred{text-align:center;font-size:10px;color:var(--b2);padding:2px 0 3px}@media(max-width:640px){.sdbr{width:68px;padding:14px 0}.sdbr .ml{width:30px;height:30px}.sdbr .ml svg{width:18px;height:18px}.sbtn{padding:10px 0}.sbtn .ic{font-size:17px}.sbtn .lb{font-size:9px}.app{max-width:100%}.hdr{padding:12px 14px}.hdr .lw{width:38px;height:38px}.hdr .lw svg{width:22px;height:22px}.tp{padding:16px 14px}.ch{padding:12px 14px 6px}.ia{padding:4px 14px 10px}.msg{max-width:95%}.sb{padding:6px 10px}.sd .ci{width:22px;height:22px;font-size:10px}.sd .lb{max-width:32px;font-size:8px}.bb .bcir{width:72px;height:72px}.cg .cd{padding:12px 14px}}</style></head><body><div class="app"><div class="sdbr"><div class="ml"><svg viewBox="0 0 64 64" fill="none"><path d="M10 50 L22 26 L34 50" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M26 50 L38 20 L50 50" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="46" cy="22" r="9" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="2.2"/><circle cx="46" cy="23" r="4.5" fill="rgba(255,255,255,0.5)"/><path d="M16 50 Q24 44 30 38 Q36 32 34 26" stroke="white" stroke-width="2.2" stroke-linecap="round" fill="none" opacity="0.5"/><path d="M4 54 Q32 46 60 54" stroke="white" stroke-width="1.8" stroke-linecap="round" opacity="0.3"/></svg></div><button class="sbtn at" data-t="chat" onclick="swT('chat')"><span class="ic">💬</span><span class="lb">咨询对话</span></button><button class="sbtn" data-t="assess" onclick="swT('assess')"><span class="ic">📊</span><span class="lb">适应力测评</span></button><button class="sbtn" data-t="toolbox" onclick="swT('toolbox')"><span class="ic">🧰</span><span class="lb">心理工具箱</span></button><button class="sbtn" data-t="mbti" onclick="swT('mbti')"><span class="ic">🧩</span><span class="lb">MBTI性格</span></button>
+<button class="sbtn" data-t="archive" onclick="swT('archive')"><span class="ic">📁</span><span class="lb">成长档案</span></button></div><div class="main"><div class="hdr"><div class="lw"><svg viewBox="0 0 64 64" fill="none"><path d="M10 50 L22 26 L34 50" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M26 50 L38 20 L50 50" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="46" cy="22" r="9" fill="rgba(255,255,255,0.2)" stroke="white" stroke-width="2.2"/><circle cx="46" cy="23" r="4.5" fill="rgba(255,255,255,0.5)"/><path d="M16 50 Q24 44 30 38 Q36 32 34 26" stroke="white" stroke-width="2.2" stroke-linecap="round" fill="none" opacity="0.5"/><path d="M4 54 Q32 46 60 54" stroke="white" stroke-width="1.8" stroke-linecap="round" opacity="0.3"/></svg></div><div class="ht"><h1>青途 AI</h1><div class="sub">衔接期认知重构助手 · CBT</div></div><span class="pt" id="pt">💬 咨询对话</span></div><div class="ct" id="tchat"><div class="sb" id="sb"><div class="sd at" data-s="1"><div class="ci">1</div><span class="lb">事件梳理</span></div><div class="sd" data-s="2"><div class="conn"></div><div class="ci">2</div><span class="lb">情绪标注</span></div><div class="sd" data-s="3"><div class="conn"></div><div class="ci">3</div><span class="lb">信念识别</span></div><div class="sd" data-s="4"><div class="conn"></div><div class="ci">4</div><span class="lb">反思引导</span></div><div class="sd" data-s="5"><div class="conn"></div><div class="ci">5</div><span class="lb">重构方案</span></div></div><div class="ch" id="ch"></div><div class="bot"><div class="disc"><strong>📋 心理科普自助工具</strong> · 不提供医疗诊断 · 不能替代专业心理咨询<br>如出现自伤、自杀等严重情绪危机，请立即拨打 <strong>12355</strong> 青少年服务热线</div><div class="cred">本工具干预流程基于CBT人工设计，AI仅作为交互执行载体</div></div><div class="ia"><textarea id="inp" rows="1" placeholder="请客观描述最近让你情绪波动的一件事…"></textarea><button class="snd" id="snd">➤</button></div></div><div class="tp hd" id="tassess"><div><h2>📊 适应力测评</h2><p class="desc">根据生涯适应力理论（Career Adaptability），从四个核心维度评估你进入大学前的准备程度。每题选择最符合你的选项。</p></div><div class="cg" id="aq"></div><div id="assessResult" style="display:none;background:#F2F7ED;border:1.5px solid #7A9E5A;border-radius:10px;padding:16px;margin-top:4px"></div><button id="assessSubmit" onclick="submitAssess()" style="padding:10px 28px;border:none;border-radius:20px;background:#D4782A;color:#fff;font-size:14px;cursor:pointer;font-family:inherit;align-self:center;margin-top:4px">提交测评</button><div class="tl">设计依据：Savickas 生涯适应力理论</div></div><div class="tp hd" id="ttoolbox"><div><h2>🧰 心理工具箱</h2><p class="desc">即时平复 · 日常觉察 · 思维矫正。</p></div><div class="cg" id="tc"></div><div class="tl">设计依据：CBT 自助技术 · 正念减压（MBSR）</div></div><div class="tp hd" id="tmbti"><div><h2>🧩 MBTI 性格探索</h2><p class="desc">通过 12 道简化题，初步了解你的性格倾向。每题从两个选项中选一个更符合你的，测试结果仅供自我探索参考。</p></div><div class="cg" id="mbtiq"></div><div id="mbtiResult" style="display:none;background:#F2F7ED;border:1.5px solid #7A9E5A;border-radius:10px;padding:20px;margin-top:4px"></div><button id="mbtiSubmit" onclick="submitMBTI()" style="padding:10px 28px;border:none;border-radius:20px;background:#D4782A;color:#fff;font-size:14px;cursor:pointer;font-family:inherit;align-self:center;margin-top:4px">提交测评</button><div class="tl">设计依据：Myers-Briggs 类型指标（简化版）</div></div>
+<div class="tp hd" id="tarchive"><div><h2>📁 成长档案</h2><p class="desc">每一次对话都是成长的记录。完成 5 步流程后自动保存。</p></div><div class="cg" id="ac"></div><div class="br"><div class="bd lk">🔒<span class="bl">—</span></div><div class="bd lk">🔒<span class="bl">—</span></div><div class="bd lk">🔒<span class="bl">—</span></div><div class="bd lk">🔒<span class="bl">—</span></div><div class="bd lk">🔒<span class="bl">—</span></div></div><div class="tl">设计依据：正强化 · 成长型思维</div></div></div></div><script>
 (function(){
 var ch=document.getElementById("ch"),ip=document.getElementById("inp"),snd=document.getElementById("snd"),sds=document.querySelectorAll(".sd")
 var st=1,si=0,h=[],ue=""
@@ -16,7 +18,26 @@ function hs(){var t=ip.value.trim();if(!t)return;am(t,"user");ip.value="";ip.sty
 snd.addEventListener("click",hs)
 ip.addEventListener("keydown",function(e){if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();hs()}})
 
-// CBT 5-step bot reply
+// CBT 5-step bot reply with belief detection
+function db(tx){
+  if(/必须|一定|应该|绝对要|非得|不能不|非.*不可/.test(tx)) return "绝对化要求";
+  if(/毁了一辈子|再也|无法承受|活不下去|天塌了|人生完了|世界末日/.test(tx)) return "灾难化思维";
+  return "以偏概全";
+}
+var beliefType = "以偏概全";
+var qMap = {
+  "以偏概全":["**第一个问题：** 这一次的结果，能代表你所有时候的表现吗？","**第二个问题：** 你有没有过和这件事相反的成功经历？","**第三个问题：** 你会用这一件事去全盘否定你的朋友吗？"],
+  "绝对化要求":["**第一个问题：** 为什么这件事必须达到你预期的标准？","**第二个问题：** 如果没达到这个标准，真的就完全没有价值了吗？","**第三个问题：** 你身边有没有人没做到这件事，但依然发展得很好？"],
+  "灾难化思维":["**第一个问题：** 这件事最坏的结果发生的概率，你觉得有多大？","**第二个问题：** 就算最坏的结果真的出现，你有哪些可以应对的方法？","**第三个问题：** 这件事真的能决定你整个人生的走向吗？"]
+};
+function buildBeliefCard(bt){
+  var exps = {
+    "以偏概全":"用一件事的结果去定义自己的全部价值——因为一次没做好，就觉得自己整个人都不行了。这就像只看了一张照片，就断定整部电影都很糟糕。",
+    "绝对化要求":"在心里给自己定了一个[必须][一定]的硬标准，觉得不达到就不行，没有商量余地。这就像给自己画了一条线，觉得跨不过去就全完了。",
+    "灾难化思维":"把单次的负面结果无限放大，认为后果完全无法承受。就像把一个小石子看成一座山，觉得它能堵死所有的路。"
+  };
+  return "<div class='bc'><span class='tag'>🧠 "+bt+"</span><br>"+exps[bt]+"</div>";
+}
 function br(text){
 if(/自伤|自杀|想死|活不下去|伤害自己|不想活了/.test(text)){am("⚠️ 如果你正处于严重的情绪危机中，请立即拨打 **12355** 青少年服务热线寻求专业帮助。","bot");return}
 if(/结束|退出|停止|不聊了/.test(text)){am("好的，我们到这里停下来。随时欢迎你回来继续聊 🌱","bot");return}
@@ -27,24 +48,22 @@ case 1:
   break;
 case 2:
   h.push({step:2,text});
-  var bc="我分析了一下，你刚才的描述里可能涉及以下不合理信念类型：<br><br>";
-  bc+="<div class='bc'><span class='tag'>🧠 以偏概全</span><br>";
-  bc+="用一件事的结果去定义自己的全部价值——因为一次没做好，就觉得自己整个人都不行了。";
-  bc+="</div><br>你能理解上面的解释吗？理解之后告诉我[可以]，我们就进入下一步。";
-  am(ws3+"<br><br>"+bc,"bot",true);st=3;us(st);
+  beliefType = db(ue||text);
+  var html = ws3+"<br><br>我分析了一下，你刚才的描述里可能涉及以下不合理信念类型：<br><br>"+buildBeliefCard(beliefType)+"<br>你能理解上面的解释吗？理解之后告诉我[可以]，我们就进入下一步。";
+  am(html,"bot",true);st=3;us(st);
   break;
 case 3:
   h.push({step:3,text});
   if(/可以|理解|明白|懂了|嗯|好|是的/.test(text)){
-    am(ws4+"<br><br>**第一个问题：** 这一次的结果，能代表你所有时候的表现吗？","bot",true);
+    am(ws4+"<br><br>"+qMap[beliefType][0],"bot",true);
     st=4;si=1;us(st);
   }else{
-    am("如果有不明白的地方可以告诉我，我换个方式解释。","bot");
+    am("如果有不明白的地方可以告诉我，我换个方式解释。<br><br>"+buildBeliefCard(beliefType),"bot",true);
   }
   break;
 case 4:
   h.push({step:4,text});
-  var qq=["**第一个问题：** 这一次的结果，能代表你所有时候的表现吗？","**第二个问题：** 你有没有过和这件事相反的成功经历？","**第三个问题：** 你会用这一件事去全盘否定你的朋友吗？"];
+  var qq = qMap[beliefType];
   if(si<qq.length){am(qq[si],"bot");si++}
   else{am(ws5,"bot",true);st=5;us(st)}
   break;
@@ -54,7 +73,7 @@ case 5:
   break;
 }
 }
-var tabs=["chat","assess","toolbox","archive"],pt=document.getElementById("pt")
+var tabs=["chat","assess","toolbox","mbti","archive"],pt=document.getElementById("pt")
 window.swT=function(n){document.querySelectorAll(".sbtn").forEach(function(b){b.classList.toggle("at",b.dataset.t===n)});tabs.forEach(function(t){var el=document.getElementById("t"+t);if(el)el.classList.toggle("hd",t!==n)});pt.textContent={chat:"💬 咨询对话",assess:"📊 适应力测评",toolbox:"🧰 心理工具箱",archive:"📁 成长档案"}[n]}
 am(ws1,"bot",false);us(1)
 })();
@@ -146,6 +165,106 @@ items.forEach(function(it){
   d.innerHTML=h;ct.appendChild(d);
 });
 })();
+
+// MBTI test - 12 questions (3 per dimension)
+(function(){
+var ct = document.getElementById('mbtiq');
+if(!ct)return;
+var qs = [
+  // E/I
+  {dim:'E/I',q:'周末你更喜欢？',a:'和朋友聚会聊天',b:'一个人安静待着',ta:'E',tb:'I'},
+  {dim:'E/I',q:'在陌生场合你通常会？',a:'主动认识新朋友',b:'等别人来搭话',ta:'E',tb:'I'},
+  {dim:'E/I',q:'你说话的方式更接近？',a:'边想边说，说着说着就清晰了',b:'想好了再说，不轻易开口',ta:'E',tb:'I'},
+  // S/N
+  {dim:'S/N',q:'你更关注？',a:'眼前的细节和具体事实',b:'未来的可能性和想象空间',ta:'S',tb:'N'},
+  {dim:'S/N',q:'看一部电影你更在意？',a:'剧情是否合理连贯',b:'有没有深层寓意或隐喻',ta:'S',tb:'N'},
+  {dim:'S/N',q:'你更擅长？',a:'按步骤执行既定计划',b:'天马行空的创意构思',ta:'S',tb:'N'},
+  // T/F
+  {dim:'T/F',q:'做决定时你更依赖？',a:'逻辑分析和客观数据',b:'内心感受和价值观',ta:'T',tb:'F'},
+  {dim:'T/F',q:'朋友找你倾诉，你更倾向？',a:'帮ta分析问题出在哪',b:'先共情安慰，听ta说完',ta:'T',tb:'F'},
+  {dim:'T/F',q:'评价一件事你更看重？',a:'对错和公平',b:'人情和关系',ta:'T',tb:'F'},
+  // J/P
+  {dim:'J/P',q:'你的桌面/房间通常是？',a:'整齐有序，东西有固定位置',b:'随性堆放，但自己找得到',ta:'J',tb:'P'},
+  {dim:'J/P',q:'你更喜欢？',a:'提前做好详细计划',b:'看情况再说，灵活应对',ta:'J',tb:'P'},
+  {dim:'J/P',q:'出门赶时间你习惯？',a:'提前很久到才安心',b:'卡点到甚至偶尔迟到',ta:'J',tb:'P'}
+];
+window.mbtiAnswers = {};
+qs.forEach(function(q,i){
+  var d=document.createElement('div');
+  d.style.cssText='background:#FDF0E3;border-radius:10px;padding:14px;border-left:3px solid #F8D1A8;margin-bottom:12px';
+  d.innerHTML='<div style="font-size:12px;color:#8B7355;margin-bottom:2px">'+(i+1)+'. ['+q.dim+']</div><div style="font-weight:600;margin-bottom:10px;font-size:14px">'+q.q+'</div><div style="display:flex;gap:10px;flex-wrap:wrap">'
+    +'<button data-i="'+i+'" data-v="'+q.ta+'" class="mbti-btn" style="flex:1;min-width:120px;padding:8px 12px;border:1.5px solid #FBE3CA;border-radius:10px;background:#fffcf9;cursor:pointer;font-size:13px;font-family:inherit;text-align:left">A. '+q.a+'</button>'
+    +'<button data-i="'+i+'" data-v="'+q.tb+'" class="mbti-btn" style="flex:1;min-width:120px;padding:8px 12px;border:1.5px solid #FBE3CA;border-radius:10px;background:#fffcf9;cursor:pointer;font-size:13px;font-family:inherit;text-align:left">B. '+q.b+'</button>'
+    +'</div><div style="font-size:10px;color:#bbb;margin-top:4px;text-align:right" id="mbti_s_'+i+'">未选择</div>';
+  ct.appendChild(d);
+});
+ct.addEventListener('click',function(e){
+  var b=e.target.closest('.mbti-btn');if(!b||!b.dataset.i)return;
+  var i=b.dataset.i;
+  b.parentElement.querySelectorAll('.mbti-btn').forEach(function(x){
+    x.style.background='#fffcf9';x.style.borderColor='#FBE3CA';x.style.color='#8B7355';
+  });
+  b.style.background='#D4782A';b.style.borderColor='#D4782A';b.style.color='#fff';
+  window.mbtiAnswers[i]=b.dataset.v;
+  var st=document.getElementById('mbti_s_'+i);if(st)st.textContent='✅ 已选择';
+  var done=Object.keys(window.mbtiAnswers).length;
+  var prog=document.getElementById('mbtiProg');if(prog)prog.textContent='进度：'+done+'/12';
+});
+// Progress
+var pdiv=document.createElement('div');pdiv.id='mbtiProg';pdiv.style.cssText='text-align:center;font-size:13px;color:#8B7355;padding:4px 0';pdiv.textContent='进度：0/12';
+if(ct)ct.parentNode.insertBefore(pdiv,ct.nextSibling);
+})();
+
+// MBTI Submit
+window.submitMBTI = function(){
+  var a=window.mbtiAnswers||{};var n=Object.keys(a).length;
+  if(n<12){alert('请完成全部 12 道题（已完成 '+n+'/12）');return;}
+  var scores={E:0,I:0,S:0,N:0,T:0,F:0,J:0,P:0};
+  for(var i=0;i<12;i++){
+    var v=a[i];if(v&&scores[v]!==undefined)scores[v]++;
+  }
+  var type='';
+  type+=scores.E>scores.I?'E':'I';
+  type+=scores.S>scores.N?'S':'N';
+  type+=scores.T>scores.F?'T':'F';
+  type+=scores.J>scores.P?'J':'P';
+  var descs={
+    'ISTJ':'严谨负责的检查者——安静、务实、有责任感',
+    'ISFJ':'温暖体贴的保护者——细心、忠诚、乐于助人',
+    'INFJ':'富有远见的提倡者——理想主义、有洞察力',
+    'INTJ':'独立果断的战略家——理性、有远见、高标准',
+    'ISTP':'灵活冷静的动手者——善于分析、适应力强',
+    'ISFP':'安静敏感的艺术家——温和、有品位、重视感受',
+    'INFP':'理想主义的调停者——富有创造力、价值观驱动',
+    'INTP':'理性创新的思考者——热爱理论、喜欢探索',
+    'ESTP':'精力充沛的挑战者——行动派、善于社交',
+    'ESFP':'热情洋溢的表演者——乐观、喜欢与人相处',
+    'ENFP':'充满灵感的倡导者——热情、富有想象力',
+    'ENTP':'机智敏捷的辩论家——聪明、喜欢挑战观念',
+    'ESTJ':'果断高效的管理者——组织能力强、注重效率',
+    'ESFJ':'热心负责的照料者——善于合作、有责任感',
+    'ENFJ':'魅力十足的领导者——有感染力、善于激励他人',
+    'ENTJ':'果断坚定的指挥官——天生的领导者、有战略眼光'
+  };
+  var desc=descs[type]||'你的性格类型：'+type;
+  var dimDetail=[
+    {n:'精力来源',v:scores.E>scores.I?'E ('+scores.E+'/'+scores.I+') 外向型':'I ('+scores.I+'/'+scores.E+') 内向型',d:scores.E>scores.I?'你倾向于从外部世界和人际互动中获取能量。':'你倾向于从内心世界和独处中获取能量。'},
+    {n:'认知方式',v:scores.S>scores.N?'S ('+scores.S+'/'+scores.N+') 实感型':'N ('+scores.N+'/'+scores.S+') 直觉型',d:scores.S>scores.N?'你更关注具体的信息和实际经验。':'你更关注事物的可能性和深层意义。'},
+    {n:'决策方式',v:scores.T>scores.F?'T ('+scores.T+'/'+scores.F+') 思考型':'F ('+scores.F+'/'+scores.T+') 情感型',d:scores.T>scores.F?'你做决定时更依赖逻辑和客观分析。':'你做决定时更考虑他人感受和价值观。'},
+    {n:'生活态度',v:scores.J>scores.P?'J ('+scores.J+'/'+scores.P+') 判断型':'P ('+scores.P+'/'+scores.J+') 感知型',d:scores.J>scores.P?'你喜欢有序、计划明确的生活方式。':'你喜欢灵活、随性的生活方式。'}
+  ];
+  var html='<div style="font-weight:700;font-size:18px;color:#5E8240;margin-bottom:12px">🧩 你的 MBTI 类型：'+type+'</div>';
+  html+='<div style="font-size:14px;margin-bottom:16px;padding:10px 14px;background:#F2F7ED;border-radius:8px;line-height:1.6">'+desc+'</div>';
+  html+='<div style="font-weight:600;font-size:14px;color:#2C1810;margin-bottom:8px">各维度倾向：</div>';
+  dimDetail.forEach(function(d){
+    html+='<div style="margin-bottom:10px"><div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:3px"><span style="font-weight:600">'+d.n+'</span><span>'+d.v+'</span></div><div style="font-size:12px;color:#8B7355">'+d.d+'</div></div>';
+  });
+  html+='<div style="margin-top:12px;padding:10px 14px;background:#FDF6ED;border-left:3px solid #C8913C;border-radius:8px;font-size:12px;color:#2C1810"><span style="font-weight:600">💡 提示：</span>MBTI 仅供自我探索参考，人的性格是流动的，不必给自己贴标签。</div>';
+  var r=document.getElementById('mbtiResult');r.style.display='block';r.innerHTML=html;
+  r.scrollIntoView({behavior:'smooth',block:'start'});
+  document.getElementById('mbtiSubmit').textContent='重新测试';
+  document.getElementById('mbtiSubmit').onclick=function(){location.reload();};
+};
 
 // Breath tool
 (function(){
