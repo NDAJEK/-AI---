@@ -110,6 +110,24 @@ items.forEach(function(it){
 
 // Breath tool
 (function(){
+// Toolbox cards
+(function(){
+var ct=document.getElementById('tc');
+if(!ct)return;
+var tools=[
+  {ic:'🧘',tt:'478呼吸法',de:'吸气4秒→屏息7秒→呼气8秒，每次3组。平复紧张焦虑的即时工具。',sc:'适用于入学焦虑、紧张情绪快速平复'},
+  {ic:'📝',tt:'情绪记录日记',de:'每天3分钟：发生了什么→感受到什么→当时的想法是什么。逐步提升情绪觉察力。',sc:'提升情绪觉察和认知识别能力'},
+  {ic:'🔄',tt:'认知重构练习',de:'当出现"我不行"的想法时，问自己：支持证据？反对证据？其他可能性？',sc:'矫正自动化负性思维，建立更平衡的认知'},
+  {ic:'🌿',tt:'五分钟正念',de:'静坐专注呼吸5分钟。思绪跑偏时温和拉回，不评判自己。',sc:'降低日常焦虑水平，提升专注力和情绪调节力'}
+];
+tools.forEach(function(t){
+  var d=document.createElement('div');
+  d.className='cd';
+  d.innerHTML='<div class="ctt">'+t.ic+' '+t.tt+'</div><div class="cdd">'+t.de+'</div><div class="csc">🎯 '+t.sc+'</div>';
+  ct.appendChild(d);
+});
+})();
+
 var cards=document.querySelectorAll('#ttoolbox .cd');
 // Add breath interactive to first card
 var first=cards[0];
