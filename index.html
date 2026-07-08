@@ -12,9 +12,48 @@ function ts(){var n=new Date();return String(n.getHours()).padStart(2,"0")+":"+S
 function sd(){setTimeout(function(){ch.scrollTop=ch.scrollHeight},60)}
 function us(n){sds.forEach(function(d,i){var idx=i+1;d.classList.remove("at","dn");if(idx===n){d.classList.add("at");d.querySelector(".ci").textContent=idx}else if(idx<n){d.classList.add("dn");d.querySelector(".ci").textContent="v"}else d.querySelector(".ci").textContent=idx});ip.placeholder=PH[n]||PH[1]}
 function am(text,who,ih){var dv=document.createElement("div");dv.className="msg "+(who==="bot"?"bt":"us");dv.innerHTML="<div class='av'>"+(who==="bot"?"🌱":"🙂")+"</div><div>"+(ih?"<div class='bub'>"+text+"</div>":"<div class='bub'>"+text.replace(/\n/g,"<br>")+"</div>")+"<div style='font-size:10px;color:#bbb'>"+ts()+"</div></div>";ch.appendChild(dv);sd()}
-function hs(){var t=ip.value.trim();if(!t)return;am(t,"user");ip.value="";setTimeout(function(){am("收到","bot")},350)}
+function hs(){var t=ip.value.trim();if(!t)return;am(t,"user");ip.value="";ip.style.height="auto";setTimeout(function(){br(t)},350)}
 snd.addEventListener("click",hs)
 ip.addEventListener("keydown",function(e){if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();hs()}})
+
+// CBT 5-step bot reply
+function br(text){
+if(/自伤|自杀|想死|活不下去|伤害自己|不想活了/.test(text)){am("⚠️ 如果你正处于严重的情绪危机中，请立即拨打 **12355** 青少年服务热线寻求专业帮助。","bot");return}
+if(/结束|退出|停止|不聊了/.test(text)){am("好的，我们到这里停下来。随时欢迎你回来继续聊 🌱","bot");return}
+switch(st){
+case 1:
+  ue=text;h.push({step:1,text});
+  am(ws2,"bot");st=2;us(st);
+  break;
+case 2:
+  h.push({step:2,text});
+  var bc="我分析了一下，你刚才的描述里可能涉及以下不合理信念类型：<br><br>";
+  bc+="<div class='bc'><span class='tag'>🧠 以偏概全</span><br>";
+  bc+="用一件事的结果去定义自己的全部价值——因为一次没做好，就觉得自己整个人都不行了。";
+  bc+="</div><br>你能理解上面的解释吗？理解之后告诉我[可以]，我们就进入下一步。";
+  am(ws3+"<br><br>"+bc,"bot",true);st=3;us(st);
+  break;
+case 3:
+  h.push({step:3,text});
+  if(/可以|理解|明白|懂了|嗯|好|是的/.test(text)){
+    am(ws4+"<br><br>**第一个问题：** 这一次的结果，能代表你所有时候的表现吗？","bot",true);
+    st=4;si=1;us(st);
+  }else{
+    am("如果有不明白的地方可以告诉我，我换个方式解释。","bot");
+  }
+  break;
+case 4:
+  h.push({step:4,text});
+  var qq=["**第一个问题：** 这一次的结果，能代表你所有时候的表现吗？","**第二个问题：** 你有没有过和这件事相反的成功经历？","**第三个问题：** 你会用这一件事去全盘否定你的朋友吗？"];
+  if(si<qq.length){am(qq[si],"bot");si++}
+  else{am(ws5,"bot",true);st=5;us(st)}
+  break;
+case 5:
+  h.push({step:5,text});
+  am("你已经完成了全部 5 步流程 🎉<br><br>如果以后有新的困扰，随时回来重新开始。祝你大学之旅一切顺利！","bot",true);
+  break;
+}
+}
 var tabs=["chat","assess","toolbox","archive"],pt=document.getElementById("pt")
 window.swT=function(n){document.querySelectorAll(".sbtn").forEach(function(b){b.classList.toggle("at",b.dataset.t===n)});tabs.forEach(function(t){var el=document.getElementById("t"+t);if(el)el.classList.toggle("hd",t!==n)});pt.textContent={chat:"💬 咨询对话",assess:"📊 适应力测评",toolbox:"🧰 心理工具箱",archive:"📁 成长档案"}[n]}
 am(ws1,"bot",false);us(1)
