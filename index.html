@@ -467,7 +467,7 @@ var ch=document.getElementById("ch"),ip=document.getElementById("inp"),snd=docum
 var st=1, h=[], messages = [];
 
 // ========== 你的 Cloudflare Worker 接口地址 ==========
-const WORKER_URL = "https://qingtuai.3413886328.workers.dev/";
+const API_URL = "https://qingtu-dp9bgurf6s0w.edgeone.cool/api";
 
 var PH={
     1:"请描述具体事件",
@@ -561,7 +561,7 @@ function hs(){
     // 调用 Worker 接口
     setTimeout(async function(){
         try {
-            const res = await fetch(WORKER_URL, {
+            const res = await fetch(API_URL, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
