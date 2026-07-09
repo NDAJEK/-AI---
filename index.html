@@ -216,7 +216,6 @@ html,body{height:100%;font-family:var(--f);background:var(--c1);color:var(--b8);
 </style>
 </head>
 <body>
-/div>
 <div id="welcomeModal" style="position:fixed;inset:0;z-index:9998;background:rgba(44,24,16,0.45);display:none;align-items:center;justify-content:center;padding:20px;font-family:'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif">
   <div style="background:#fffcf9;border-radius:16px;padding:32px 28px 24px;width:480px;max-width:100%;box-shadow:0 20px 60px rgba(0,0,0,0.2)">
     <div style="text-align:center;margin-bottom:20px">
@@ -272,10 +271,7 @@ var d=new Date();
 var m=String(d.getMonth()+1).padStart(2,"0");
 var dd=String(d.getDate()).padStart(2,"0");
 
-if(saved === "ok"){ 
-   
-  document.getElementById("welcomeModal").style.display = "flex";
-}
+document.getElementById("welcomeModal").style.display = "flex";
 ;
 window.closeWelcome = function(){
   document.getElementById("welcomeModal").style.display = "none";
@@ -482,12 +478,13 @@ async function hs(){
         const stepRules = [
             "当前是第1步：事件梳理。请引导用户客观描述具体事件，只讲事实，不加主观感受。如果用户只回复“可以/嗯/好的”，请清晰引导并给出示例；如果用户描述模糊，请追问细节。确认事件清晰完整后，再进入下一步。",
             "当前是第2步：情绪标注。请引导用户说出这件事引发的具体情绪（比如焦虑、自责、沮丧），并给情绪强度打0-10分。确认情绪和分值后，再进入下一步。",
-            "当前是第3步：请引导用户回忆事件发生时第一时间冒出的想法，区分事实与主观信念，信息完整后推进流程。",
+            "当前是第3步：识别不合理信念类型[以偏概全/绝对化要求/灾难化思维]，回复末尾单独写[信念类型：XXX]。",
             "当前是第4步：通过苏格拉底提问引导反思，不直接否定用户，思考完毕进入第五步。",
             "当前是第5步：梳理2-3条可执行理性行动方案，对话末尾单独输出【训练完成】，告知用户可前往成长档案与工具箱。"
         ];
         const systemPrompt = `你是温和中立的青少年CBT自助助手，仅做心理科普，不做医疗诊断。硬性规则：
 1. 严格按当前步骤对话，禁止跳步；信息不足持续追问；
+【共情规则】回复必须提及用户描述的1-2个具体细节，不得使用模糊套话；
 2. 信息收集完毕，单独一行写【进入下一步】；全部流程结束单独写【训练完成】；
 3. 识别自伤自杀内容立刻提示12355热线终止对话；
 当前阶段指引：${stepRules[st-1]}`;
