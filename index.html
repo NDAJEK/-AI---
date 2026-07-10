@@ -48,7 +48,7 @@ html,body{height:100%;font-family:var(--f);background:var(--c1);color:var(--b8);
     content:"";position:absolute;left:-3px;top:50%;transform:translateY(-50%);
     width:3px;height:36px;background:var(--w4);border-radius:0 3px 3px 0
 }
-.main{flex:1;display:flex;flex-direction:column;min-width:0;height:100%;}
+.main{flex:1;display:flex;flex-direction:column;min-width:0;height:100%;overflow:hidden;}
 .hdr{
     background:linear-gradient(135deg,var(--w4),var(--w6));color:#fff;
     padding:12px 20px 10px;display:flex;align-items:center;gap:12px;flex-shrink:0;
@@ -70,7 +70,7 @@ html,body{height:100%;font-family:var(--f);background:var(--c1);color:var(--b8);
     padding:3px 10px;border-radius:20px;transition:var(--transition-all);
 }
 .hdr .pt:hover{background:rgba(255,255,255,0.2)}
-.ct{flex:1;display:flex;flex-direction:column;height:100%;}
+.ct{flex:1;display:flex;flex-direction:column;min-height:0;}
 .hd,.tp.hd{display:none}
 .sb{
     display:flex;gap:3px;padding:8px 16px 6px;background:var(--c1);
@@ -97,7 +97,8 @@ html,body{height:100%;font-family:var(--f);background:var(--c1);color:var(--b8);
 }
 .ch{
     flex:1;overflow-y:auto;padding:12px 20px 20px;
-    display:flex;flex-direction:column;gap:10px;background:#fffcf9
+    display:flex;flex-direction:column;gap:10px;background:#fffcf9;
+    min-height:0;
 }
 .msg{display:flex;gap:10px;max-width:88%;animation:fu 0.35s ease}
 .msg.bt{align-self:flex-start}
@@ -122,6 +123,7 @@ html,body{height:100%;font-family:var(--f);background:var(--c1);color:var(--b8);
 .ia{
     padding:6px 20px 10px;border-top:1px solid var(--c2);background:#fffcf9;
     flex-shrink:0;display:flex;gap:10px;align-items:flex-end;
+    z-index:5;
 }
 .ia textarea{
     flex:1;border:1.5px solid var(--c3);border-radius:var(--rs);
@@ -159,7 +161,8 @@ html,body{height:100%;font-family:var(--f);background:var(--c1);color:var(--b8);
 .ac .it:last-child{border-bottom:none}
 .tp{
     flex:1;overflow-y:auto;padding:20px 24px 16px;
-    display:flex;flex-direction:column;gap:16px
+    display:flex;flex-direction:column;gap:16px;
+    min-height:0;
 }
 .tp h2{font-size:18px;color:var(--b8);font-weight:700}
 .tp .desc{font-size:13.5px;color:var(--b3);line-height:1.7}
@@ -332,7 +335,6 @@ html,body{height:100%;font-family:var(--f);background:var(--c1);color:var(--b8);
     <div style="font-size:11px;color:#C4B09A;text-align:center;margin-top:12px">本工具为心理科普自助工具，不替代专业心理咨询</div>
   </div>
 </div>
-
 <div id="cool_modal">
   <div style="background:white;padding:24px;border-radius:16px;text-align:center;box-shadow:0 10px 40px rgba(0,0,0,0.2)">
     <h3>⚠️ 当前情绪过高，进入强制紧急冷却</h3>
@@ -340,7 +342,6 @@ html,body{height:100%;font-family:var(--f);background:var(--c1);color:var(--b8);
     <p>完成一轮478呼吸后才可继续对话</p>
   </div>
 </div>
-
 <div class="app">
   <div class="sdbr">
     <div class="ml">
@@ -369,7 +370,6 @@ html,body{height:100%;font-family:var(--f);background:var(--c1);color:var(--b8);
       <span class="ic">📁</span><span class="lb">成长档案</span>
     </button>
   </div>
-
   <div class="main">
     <div class="hdr">
       <div class="lw">
@@ -388,7 +388,6 @@ html,body{height:100%;font-family:var(--f);background:var(--c1);color:var(--b8);
       </div>
       <span class="pt" id="pt">💬 咨询对话</span>
     </div>
-
     <div class="ct" id="tchat">
       <div class="sb" id="sb">
         <div class="sd"><div class="ci">1</div><span class="lb">事件梳理</span></div>
@@ -413,7 +412,6 @@ html,body{height:100%;font-family:var(--f);background:var(--c1);color:var(--b8);
         <button class="snd" id="snd">➤</button>
       </div>
     </div>
-
     <div class="tp hd" id="tassess">
       <div>
         <h2>📊 适应力测评</h2>
@@ -424,7 +422,6 @@ html,body{height:100%;font-family:var(--f);background:var(--c1);color:var(--b8);
       <button id="assessSubmit" onclick="submitAssess()" style="padding:10px 28px;border:none;border-radius:20px;background:#D4782A;color:#fff;font-size:14px;cursor:pointer;font-family:inherit;align-self:center;margin-top:4px;transition:all 0.24s">提交测评</button>
       <div class="tl">设计依据：Savickas 生涯适应力理论</div>
     </div>
-
     <div class="tp hd" id="ttoolbox">
       <div>
         <h2>🧰 心理工具箱</h2>
@@ -433,7 +430,6 @@ html,body{height:100%;font-family:var(--f);background:var(--c1);color:var(--b8);
       <div class="cg" id="tc"></div>
       <div class="tl">设计依据：CBT 自助技术 · 正念减压（MBSR）</div>
     </div>
-
     <div class="tp hd" id="tmbti">
       <div>
         <h2>🧩 MBTI性格探索</h2>
@@ -444,7 +440,6 @@ html,body{height:100%;font-family:var(--f);background:var(--c1);color:var(--b8);
       <button id="mbtiSubmit" onclick="submitMBTI()" style="padding:10px 28px;border:none;border-radius:20px;background:#D4782A;color:#fff;font-size:14px;cursor:pointer;font-family:inherit;align-self:center;margin-top:4px;transition:all 0.24s">提交测评</button>
       <div class="tl">设计依据：Myers-Briggs 类型指标（简化版）</div>
     </div>
-
     <div class="tp hd" id="tarchive">
       <div>
         <h2>📁 成长档案</h2>
@@ -458,7 +453,6 @@ html,body{height:100%;font-family:var(--f);background:var(--c1);color:var(--b8);
         <button onclick="switchGrowthTab('tab_timeline')">📅 时间线</button>
         <button onclick="switchGrowthTab('tab_history')">💬 对话记录</button>
       </div>
-
       <div id="tab_default" class="growth-sub" style="display:block">
         <div class="cg" id="ac"></div>
         <div class="panel">
@@ -478,7 +472,6 @@ html,body{height:100%;font-family:var(--f);background:var(--c1);color:var(--b8);
           <div class="bd lk">🔒<span class="bl">—</span></div>
         </div>
       </div>
-
       <div id="tab_mood" class="growth-sub">
         <div class="panel">
           <h3 style="display:flex;align-items:center;gap:8px;color:#D4782A;font-size:15px;margin:0 0 8px">📊 本周情绪热力 & 情绪周报</h3>
@@ -486,7 +479,6 @@ html,body{height:100%;font-family:var(--f);background:var(--c1);color:var(--b8);
           <div id="weekReport" style="margin-top:10px;font-size:13px;color:#8B7355;background:#FFF8F0;border-radius:8px;padding:10px"></div>
         </div>
       </div>
-
       <div id="tab_trap" class="growth-sub">
         <div class="panel">
           <h3 style="display:flex;align-items:center;gap:8px;color:#D4782A;font-size:15px;margin:0 0 8px">🧠 个人思维陷阱统计(CBT认知习惯分析)</h3>
@@ -494,7 +486,6 @@ html,body{height:100%;font-family:var(--f);background:var(--c1);color:var(--b8);
           <div id="trapReport" style="margin-top:8px;font-size:13px;color:#5A3A1A;background:#FFF5EE;border-radius:8px;padding:10px"></div>
         </div>
       </div>
-
       <div id="tab_timeline" class="growth-sub">
         <div class="panel">
           <h3 style="display:flex;align-items:center;gap:8px;color:#D4782A;font-size:15px;margin:0 0 8px">📅 个人成长时间线</h3>
@@ -505,7 +496,6 @@ html,body{height:100%;font-family:var(--f);background:var(--c1);color:var(--b8);
           <div id="tlBox" style="border-left:3px solid #D4782A;padding-left:12px;margin-top:8px;font-size:13px;color:#8B7355"></div>
         </div>
       </div>
-
       <div id="tab_history" class="growth-sub">
         <div class="panel">
           <h3 style="display:flex;align-items:center;gap:8px;color:#D4782A;font-size:15px;margin:0 0 8px">💬 本地全部对话记录(永久保存本机)</h3>
@@ -517,7 +507,6 @@ html,body{height:100%;font-family:var(--f);background:var(--c1);color:var(--b8);
     </div>
   </div>
 </div>
-
 <script>
 // ==================== 全局常量与存储底层 ====================
 const STORE_KEYS = {
@@ -527,7 +516,6 @@ const STORE_KEYS = {
   chatHistory:"chat_history",
   growthTimeline:"growth_timeline"
 };
-
 function getStore(key){
   const str = localStorage.getItem(key);
   return str ? JSON.parse(str) : [];
@@ -535,18 +523,15 @@ function getStore(key){
 function setStore(key,data){
   localStorage.setItem(key, JSON.stringify(data));
 }
-
 const MOOD_LEVEL = {极低:20,偏低:40,平稳:60,良好:80,极佳:100};
 const TRAP_LIST = ["灾难化思维","绝对化要求","以偏概全","个人化归因","情绪化推理","非黑即白"];
 let coolTimer = null;
 let moodChart = null;
 let trapChart = null;
-
 // ==================== 全局事件函数 ====================
 window.closeWelcome = function(){
   document.getElementById("welcomeModal").style.display = "none";
 };
-
 // 侧边栏大页面切换
 const tabs=["chat","assess","toolbox","mbti","archive"];
 const pt=document.getElementById("pt");
@@ -557,7 +542,6 @@ const themes = {
     mbti:    { w3:'#B58AA8', w4:'#9B6B8F', w5:'#7D5273', w6:'#603E58', g4:'#8B7355', g5:'#6E5A42' },
     archive: { w3:'#C9A37A', w4:'#A67C52', w5:'#8B6540', w6:'#6E4F30', g4:'#8B7355', g5:'#6E5A42' }
 };
-
 function setTheme(name){
   const t = themes[name] || themes.chat;
   const root = document.documentElement;
@@ -568,7 +552,6 @@ function setTheme(name){
   root.style.setProperty('--g4', t.g4);
   root.style.setProperty('--g5', t.g5);
 }
-
 window.swT = function(n){
     document.querySelectorAll(".sbtn").forEach(b=>b.classList.toggle("at",b.dataset.t===n));
     tabs.forEach(t=>document.getElementById("t"+t).classList.toggle("hd",t!==n));
@@ -587,22 +570,17 @@ window.swT = function(n){
         },100);
     }
 };
-
-// 成长档案子标签切换（修复核心）
+// 成长档案子标签切换
 window.switchGrowthTab = function(id){
-  // 切换面板显示
   document.querySelectorAll(".growth-sub").forEach(el=>el.style.display="none");
   document.getElementById(id).style.display="block";
   
-  // 切换按钮高亮
   document.querySelectorAll(".subtab button").forEach(btn=>btn.classList.remove("active"));
   event.target.classList.add("active");
 
-  // 延迟渲染图表，解决隐藏容器渲染异常
   if(id === "tab_mood") setTimeout(()=>renderHeatMap(),50);
   if(id === "tab_trap") setTimeout(()=>renderTrapStats(),50);
 };
-
 // ==================== 对话核心逻辑 ====================
 const API_KEY = "sk-fff9f632015742da8c331be8b63e8f44";
 const API_URL = "https://api.deepseek.com/v1/chat/completions";
@@ -616,7 +594,6 @@ const PH = {
     5:"选一个微行动试试吧"
 };
 const ws1 = "你好，我是青途AI，衔接期认知重构助手。\n\n我们会通过5步CBT方法帮你梳理情绪，现在从第一步开始。\n\n✅ 请客观描述一件近期让你情绪波动的事，只讲事实，不用加入你的感受和想法。\n\n参考：高考分数低于预期、担心大学宿舍相处、暑假感到迷茫\n\n可以和我说说你的情况吗";
-
 function ts(){
     const n=new Date();
     return String(n.getHours()).padStart(2,"0")+":"+String(n.getMinutes()).padStart(2,"0");
@@ -634,7 +611,6 @@ function am(text,who,ih){
     sd();
     saveChatMsg(who, text);
 }
-
 async function hs(){
     const t=ip.value.trim();
     if(!t) return;
@@ -715,7 +691,6 @@ async function hs(){
         ip.disabled = false;
     }
 }
-
 function us(n){
     st = n;
     ip.placeholder=PH[n];
@@ -734,7 +709,6 @@ function us(n){
         sgt.innerHTML=tips[n];
     }
 }
-
 // ==================== 图表模块 ====================
 function initHeatMap(){
     const box = document.getElementById("heatmapBox");
@@ -764,7 +738,6 @@ function initHeatMap(){
     document.getElementById("weekReport").innerText = `本周情绪平均分：${avg.toFixed(1)}，${avg<40?"情绪偏低建议478冷却":"情绪平稳良好"}`;
 }
 function renderHeatMap(){ initHeatMap(); }
-
 function initTrapChart(){
     const box = document.getElementById("trapChartBox");
     if(!box || !window.echarts) return;
@@ -788,12 +761,10 @@ function initTrapChart(){
     }
 }
 function renderTrapStats(){ initTrapChart(); }
-
 window.addEventListener("resize",()=>{
     if(moodChart) moodChart.resize();
     if(trapChart) trapChart.resize();
 });
-
 // ==================== 情绪存储与冷却 ====================
 function saveDailyMood(score){
   let logs = getStore(STORE_KEYS.moodLogs);
@@ -803,7 +774,6 @@ function saveDailyMood(score){
   setStore(STORE_KEYS.moodLogs, logs);
   renderHeatMap();
 }
-
 function recordTrap(name){
   let list = getStore(STORE_KEYS.trapStats);
   const item = list.find(x=>x.name===name);
@@ -811,7 +781,6 @@ function recordTrap(name){
   setStore(STORE_KEYS.trapStats, list);
   renderTrapStats();
 }
-
 function checkMoodAndCool(score){
   saveDailyMood(score);
   renderHeatMap();
@@ -821,7 +790,6 @@ function checkMoodAndCool(score){
     startAutoCoolDown();
   }
 }
-
 function startAutoCoolDown(){
   clearInterval(coolTimer);
   let phase = 0;
@@ -844,7 +812,6 @@ function startAutoCoolDown(){
     }
   },1000);
 }
-
 // ==================== 微行动打卡 ====================
 window.addAct = function(){
   const val = document.getElementById("actInput").value.trim();
@@ -855,7 +822,6 @@ window.addAct = function(){
   document.getElementById("actInput").value="";
   renderAct();
 };
-
 window.toggleAct = function(id){
   const arr = getStore(STORE_KEYS.actionCheck);
   const obj = arr.find(x=>x.id===id);
@@ -863,7 +829,6 @@ window.toggleAct = function(id){
   setStore(STORE_KEYS.actionCheck,arr);
   renderAct();
 };
-
 function renderAct(){
   const arr = getStore(STORE_KEYS.actionCheck);
   let html = "";
@@ -879,7 +844,6 @@ function renderAct(){
   const rate = arr.length?((finish/arr.length)*100).toFixed(1):0;
   document.getElementById("actRate").innerText = rate+"%";
 }
-
 // ==================== 成长时间线 ====================
 window.addTL = function(){
   const val = document.getElementById("tlInput").value.trim();
@@ -890,7 +854,6 @@ window.addTL = function(){
   document.getElementById("tlInput").value="";
   renderTL();
 };
-
 function renderTL(){
   const arr = getStore(STORE_KEYS.growthTimeline);
   let html = "";
@@ -902,7 +865,6 @@ function renderTL(){
   });
   document.getElementById("tlBox").innerHTML = html||"暂无成长记录";
 }
-
 // ==================== 对话历史 ====================
 function saveChatMsg(role,text){
   const arr = getStore(STORE_KEYS.chatHistory);
@@ -910,7 +872,6 @@ function saveChatMsg(role,text){
   setStore(STORE_KEYS.chatHistory,arr);
   renderChat();
 }
-
 function renderChat(){
   const arr = getStore(STORE_KEYS.chatHistory);
   let html = "";
@@ -923,12 +884,10 @@ function renderChat(){
   });
   document.getElementById("chatHistoryBox").innerHTML = html||"暂无对话记录";
 }
-
 window.clearChat = function(){
   setStore(STORE_KEYS.chatHistory,[]);
   renderChat();
 };
-
 // ==================== 适应力测评 ====================
 (function(){
 const ct = document.getElementById('aq');
@@ -962,7 +921,6 @@ ct.addEventListener('click',e=>{
     window.assessAnswers[i] = parseInt(b.dataset.v);
 });
 })();
-
 window.submitAssess = function(){
     const answers = window.assessAnswers || {};
     const keys = Object.keys(answers);
@@ -991,7 +949,6 @@ window.submitAssess = function(){
     r.innerHTML = html;
     btn.style.display = 'none';
 };
-
 // 档案静态卡片
 (function(){
 const ct=document.getElementById('ac');
@@ -1011,7 +968,6 @@ items.forEach(it=>{
     ct.appendChild(d);
 });
 })();
-
 // ==================== MBTI测评 ====================
 (function(){
 const ct = document.getElementById('mbtiq');
@@ -1054,7 +1010,6 @@ ct.addEventListener('click',e=>{
   document.getElementById("mbti_s_"+i).textContent='✅ 已选择';
 });
 })();
-
 window.submitMBTI = function(){
   const a=window.mbtiAnswers||{};
   if(Object.keys(a).length<12){alert("请完成全部12道MBTI题目");return;}
@@ -1072,7 +1027,6 @@ window.submitMBTI = function(){
   const btn=document.getElementById('mbtiSubmit');
   r.style.display='block';r.innerHTML=html;btn.style.display='none';
 };
-
 // ==================== 工具箱 & 478呼吸 ====================
 (function(){
 const ct=document.getElementById('tc');
@@ -1096,7 +1050,6 @@ tools.forEach(t=>{
   }
 });
 })();
-
 let brRunning=false;
 window.startB=function(){
   if(brRunning)return;
@@ -1128,7 +1081,6 @@ window.startB=function(){
     }
   },1000);
 };
-
 // ==================== 页面入口 ====================
 window.onload = function(){
   ch = document.getElementById("ch");
